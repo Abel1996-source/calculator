@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import React,{useState } from 'react';
 import './App.css';
+import Calculator from './component/Calculator';
+import Heading from './component/Heading';
 
 function App() {
+
+  const [result, setResult]=useState("")
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Heading/>
+      <div className='content-calculator'>
+           <Calculator results={result} setResult={setResult} />
+      </div>
+    </>
   );
 }
 
